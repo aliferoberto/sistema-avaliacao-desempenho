@@ -21,4 +21,3 @@ Por meio do sistema, é possível:
 - **Python**
 - **Django**
 - **SQLite**
-
