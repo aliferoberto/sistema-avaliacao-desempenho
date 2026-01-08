@@ -12,3 +12,5 @@ Por meio do sistema, é possível:
 
 ---
 
+<img width="1054" height="651" alt="image" src="https://github.com/user-attachments/assets/1e675e84-c5a9-4c58-900e-e76ead0883e8" />
+
