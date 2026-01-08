@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Avaliação</h2>
+
+    <p><strong>Avaliador:</strong> {{ avaliacao.avaliador }}</p>
+    <p><strong>Avaliado:</strong> {{ avaliacao.avaliado }}</p>
+    <p><strong>Observação:</strong> {{ avaliacao.observacao }}</p>
+
+    <h3>Notas</h3>
+    <ul>
+        {% for nota in notas %}
+        <li>{{ nota.criterio }}: {{ nota.valor }}</li>
+        {% empty %}
+        <li>Nenhuma nota cadastrada.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'adicionar_nota' avaliacao.id %}">Adicionar nota</a>
+{% endblock %}

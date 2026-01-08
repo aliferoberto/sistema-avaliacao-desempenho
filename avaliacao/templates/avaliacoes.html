@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Avaliações{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Lista de Avaliações</h2>
+
+    <table>
+        <tr>
+            <th>Avaliado</th>
+            <th>Avaliador</th>
+            <th>Data</th>
+            <th>Ações</th>
+        </tr>
+
+        {% for avaliacao in avaliacoes %}
+        <tr>
+            <td>{{ avaliacao.avaliado }}</td>
+            <td>{{ avaliacao.avaliador }}</td>
+            <td>{{ avaliacao.data }}</td>
+            <td>
+                <a class="btn btn-danger"
+                   href="{% url 'excluir_avaliacao' avaliacao.id %}">
+                   Excluir
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">Nenhuma avaliação cadastrada.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
