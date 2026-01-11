@@ -3,7 +3,6 @@
 {% block title %}Avaliações{% endblock %}
 
 {% block content %}
-<div class="card">
     <h2>Lista de Avaliações</h2>
 
     <table>
@@ -17,13 +16,11 @@
         {% for avaliacao in avaliacoes %}
         <tr>
             <td>{{ avaliacao.avaliado }}</td>
-            <td>{{ avaliacao.avaliador }}</td>
+            <td>{{ user.username }}</td>
             <td>{{ avaliacao.data }}</td>
             <td>
-                <a class="btn btn-danger"
-                   href="{% url 'excluir_avaliacao' avaliacao.id %}">
-                   Excluir
-                </a>
+                <a href="{% url 'detalhe_avaliacao' avaliacao.id %}" class="btn">Ver detalhes</a>
+                <a href="{% url 'excluir_avaliacao' avaliacao.id %}" class="btn btn-danger">Excluir</a>
             </td>
         </tr>
         {% empty %}
@@ -32,5 +29,4 @@
         </tr>
         {% endfor %}
     </table>
-</div>
 {% endblock %}

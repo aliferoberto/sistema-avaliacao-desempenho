@@ -1,10 +1,33 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Avaliacao, Colaborador, Nota
-from .forms import AvaliacaoForm, NotaForm
-
+from django.contrib.auth.models import User
+from django.contrib.auth import login
+from .models import Avaliacao, Colaborador, Nota, Criterio
+from .forms import CadastroUsuarioForm, AvaliacaoForm, NotaForm
 # Create your views here.
+
+def cadastrar_usuario(request):
+    if request.method == 'POST':
+        form = CadastroUsuarioForm(request.POST)
+
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data['password'])
+            user.save()
+
+            Colaborador.objects.create(
+                user=user,
+                nome=user.username,
+                cargo='',
+                setor=''
+            )
+
+            return redirect('login')
+    else:
+        form = CadastroUsuarioForm()
+    
+    return render(request, 'criar_colaborador.html', {'form': form})
 
 @login_required
 def home(request):
@@ -14,16 +37,6 @@ def home(request):
 def lista_avaliacoes(request):
     avaliacoes = Avaliacao.objects.all()
     return render(request, 'avaliacoes.html', {'avaliacoes': avaliacoes})
-
-@login_required
-def detalhe_avaliacao(request, id):
-    avaliacao = get_object_or_404(Avaliacao, id=id)
-    notas = Nota.objects.filter(avaliacao=avaliacao)
-
-    return render(request, 'detalhe_avaliacao.html', {
-        'avaliacao': avaliacao,
-        'notas': notas
-    })
 
 @login_required
 def criar_avaliacao(request):
@@ -39,11 +52,21 @@ def criar_avaliacao(request):
             avaliacao = form.save(commit=False)
             avaliacao.avaliador = colaborador
             avaliacao.save()
-            return redirect('lista_avaliacoes')
+            return redirect('adicionar_nota', avaliacao_id=avaliacao.id)
     else:
         form = AvaliacaoForm()
 
     return render(request, 'criar_avaliacao.html', {'form': form})
+
+@login_required
+def detalhe_avaliacao(request, id):
+    avaliacao = get_object_or_404(Avaliacao, id=id)
+    notas = Nota.objects.filter(avaliacao=avaliacao)
+
+    return render(request, 'detalhe_avaliacao.html', {
+        'avaliacao': avaliacao,
+        'notas': notas
+    })
 
 @login_required
 def adicionar_nota(request, avaliacao_id):
@@ -55,7 +78,7 @@ def adicionar_nota(request, avaliacao_id):
             nota = form.save(commit=False)
             nota.avaliacao = avaliacao
             nota.save()
-            return redirect('detalhe_avaliacao', id=avaliacao.id)
+            return redirect('lista_avaliacoes')
     else:
         form = NotaForm()
 

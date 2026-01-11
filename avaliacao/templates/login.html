@@ -1,16 +1,33 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Entrar</button>
-    </form>
+    <div class="container">
+        <h2>Login</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn">Entrar</button>
+        </form>
+        <hr style="margin: 20px 0;">
+
+        <p style="text-align: center;">
+            Ainda não tem conta?
+        </p>
+
+        <div style="display: flex; justify-content: center;">
+            <a href="{% url 'criar_colaborador' %}" class="btn btn-danger">
+                Criar conta
+            </a>
+        </div>
+    </div>
 </body>
 </html>

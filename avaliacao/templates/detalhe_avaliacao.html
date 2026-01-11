@@ -1,20 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Avaliação</h2>
+<h2>Detalhes da Avaliação</h2>
 
-    <p><strong>Avaliador:</strong> {{ avaliacao.avaliador }}</p>
-    <p><strong>Avaliado:</strong> {{ avaliacao.avaliado }}</p>
-    <p><strong>Observação:</strong> {{ avaliacao.observacao }}</p>
+<p><strong>Colaborador:</strong> {{ avaliacao.avaliado }}</p>
+<p><strong>Avaliador:</strong> {{ avaliacao.avaliador }}</p>
+<p><strong>Data:</strong> {{ avaliacao.data }}</p>
 
-    <h3>Notas</h3>
-    <ul>
-        {% for nota in notas %}
-        <li>{{ nota.criterio }}: {{ nota.valor }}</li>
-        {% empty %}
-        <li>Nenhuma nota cadastrada.</li>
-        {% endfor %}
-    </ul>
+<h3>Notas</h3>
 
-    <a href="{% url 'adicionar_nota' avaliacao.id %}">Adicionar nota</a>
+<table>
+    <tr>
+        <th>Critério</th>
+        <th>Nota</th>
+    </tr>
+    {% for nota in notas %}
+    <tr>
+        <td>{{ nota.criterio }}</td>
+        <td>{{ nota.valor }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="2">Nenhuma nota registrada</td>
+    </tr>
+    {% endfor %}
+</table>
+<div style=" display: flex; gap: 10px; margin-top: 20px; justify-content: flex-start;">
+    <a href="{% url 'lista_avaliacoes' %}" class="btn btn-danger">Voltar</a>
+</div>
 {% endblock %}

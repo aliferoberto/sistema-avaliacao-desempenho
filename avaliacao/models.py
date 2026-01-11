@@ -32,7 +32,7 @@ class Avaliacao(models.Model):
     observacao = models.TextField(blank=True)
 
     def __str__(self):
-        return f"Avaliacao de {self.avaliado} por {self.avaliador}"
+        return f"{self.avaliado} - Nota {self.nota}"
     
 class Nota(models.Model):
     avaliacao = models.ForeignKey(Avaliacao, on_delete=models.CASCADE)
