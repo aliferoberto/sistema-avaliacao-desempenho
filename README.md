@@ -19,6 +19,41 @@ Por meio do sistema, é possível:
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Python**
-- **Django**
-- **SQLite**
+- **Python 3.13.2**
+- **Django 6**
+- **SQLite3.x**
+- **HTML5, CSS3**
+
+## 🚀 Como executar o projeto localmente
+📌 Pré-requisitos
+
+Antes de iniciar, é necessário ter instalado na máquina:
+
+Python 3.10+ (recomendado: 3.13)
+
+Git
+
+Verifique as versões:
+```bash 
+python --version
+git --version
+```
+## 1. Clone o repositório
+
+```bash
+git clone https://github.com/SEU-USUARIO/sistema-avaliacao-desempenho.git
+cd sistema-avaliacao-desempenho
+```
+## 2. Criando e ativando o ambiente virtual
+
+## Windows
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+## Linux / macOS
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
