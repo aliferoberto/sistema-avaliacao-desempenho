@@ -19,6 +19,7 @@ Por meio do sistema, é possível:
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Python**
-- **Django**
+- **Python 3.13.2**
+- **Django 6**
 - **SQLite**
+- **HTML5, CSS3**
