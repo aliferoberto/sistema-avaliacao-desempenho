@@ -44,4 +44,16 @@ git --version
 git clone https://github.com/SEU-USUARIO/sistema-avaliacao-desempenho.git
 cd sistema-avaliacao-desempenho
 ```
+## 🧪 Criando e ativando o ambiente virtual
 
+```bash
+Windows
+python -m venv venv
+venv\Scripts\activate
+```
+
+```bash
+Linux / macOS
+python3 -m venv venv
+source venv/bin/activate
+```
