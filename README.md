@@ -57,3 +57,29 @@ venv\Scripts\activate
 python3 -m venv venv
 source venv/bin/activate
 ```
+
+## 3. Instalando dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Aplique as migrações
+
+```bash
+python manage.py migrate
+```
+
+## 5. Crie um superusuário
+
+```bash
+python manage.py createsuperuser
+```
+
+## 6. Rode o servidor
+
+```bash
+python manage.py runserver
+```
+Acesse:
+http://127.0.0.1:8000/
