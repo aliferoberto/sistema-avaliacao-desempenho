@@ -23,3 +23,17 @@ Por meio do sistema, é possível:
 - **Django 6**
 - **SQLite3.x**
 - **HTML5, CSS3**
+
+## 🚀 Como executar o projeto localmente
+
+🚀 Como executar o projeto localmente
+📌 Pré-requisitos
+
+Antes de iniciar, é necessário ter instalado na máquina:
+
+Python 3.10+ (recomendado: 3.13)
+Git
+Verifique as versões:
+```bash 
+python --version
+git --version
