@@ -21,5 +21,5 @@ Por meio do sistema, é possível:
 
 - **Python 3.13.2**
 - **Django 6**
-- **SQLite**
+- **SQLite3.x**
 - **HTML5, CSS3**
