@@ -32,7 +32,9 @@ Por meio do sistema, é possível:
 Antes de iniciar, é necessário ter instalado na máquina:
 
 Python 3.10+ (recomendado: 3.13)
+
 Git
+
 Verifique as versões:
 ```bash 
 python --version
