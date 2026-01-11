@@ -46,14 +46,14 @@ cd sistema-avaliacao-desempenho
 ```
 ## 🧪 Criando e ativando o ambiente virtual
 
+## Windows
 ```bash
-Windows
 python -m venv venv
 venv\Scripts\activate
 ```
 
+## Linux / macOS
 ```bash
-Linux / macOS
 python3 -m venv venv
 source venv/bin/activate
 ```
