@@ -25,8 +25,6 @@ Por meio do sistema, é possível:
 - **HTML5, CSS3**
 
 ## 🚀 Como executar o projeto localmente
-
-🚀 Como executar o projeto localmente
 📌 Pré-requisitos
 
 Antes de iniciar, é necessário ter instalado na máquina:
@@ -39,3 +37,11 @@ Verifique as versões:
 ```bash 
 python --version
 git --version
+
+## 1. Clone o repositório
+
+```bash
+git clone https://github.com/SEU-USUARIO/sistema-avaliacao-desempenho.git
+cd sistema-avaliacao-desempenho
+```
+
