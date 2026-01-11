@@ -44,7 +44,7 @@ git --version
 git clone https://github.com/SEU-USUARIO/sistema-avaliacao-desempenho.git
 cd sistema-avaliacao-desempenho
 ```
-## 🧪 Criando e ativando o ambiente virtual
+## 2. Criando e ativando o ambiente virtual
 
 ## Windows
 ```bash
