@@ -37,7 +37,7 @@ Verifique as versões:
 ```bash 
 python --version
 git --version
-
+```
 ## 1. Clone o repositório
 
 ```bash
